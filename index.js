@@ -61,4 +61,6 @@ app.post('/instagram', function(req, res) {
   res.sendStatus(200);
 });
 
-app.listen();
+var server = app.listen(2000, function() {
+  console.log('Listening on port %d', server.address().port);
+});
