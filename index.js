@@ -13,6 +13,12 @@ var xhub = require('express-x-hub');
 
 var APP_SECRET = '43vMadnVJ3irWdC'
 
+const http = require('http');
+
+const hostname = 'localhost';
+const port = 3000;
+
+
 app.set('port', (process.env.PORT || 5000));
 app.listen(app.get('port'));
 
@@ -61,6 +67,7 @@ app.post('/instagram', function(req, res) {
   res.sendStatus(200);
 });
 
-var server = app.listen(2000, function() {
-  console.log('Listening on port %d', server.address().port);
+// app.listen();
+app.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
 });
